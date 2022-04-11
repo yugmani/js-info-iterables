@@ -9,7 +9,7 @@
     <li>Strings are also iterable.</li>
     <li>
       If an object isn’t technically an array, but represents a collection
-      (list, set) of something, then for..of is a great syntax to loop over it,
+      (list, set) of something, then <code>for..of</code> is a great syntax to loop over it,
     </li>
   </ul>
   <h2>Symbol.iterator</h2>
@@ -27,9 +27,10 @@
     </ul>
     <h2>Array.from</h2>
     <ul>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li> <code>Array.from</code> method takes an iterable or array-like value and makes a “real” Array from it.</li>
+      <li>Then we can call array methods on it.</li>
+      <li>We can use <code>Array.from</code> to turn a string into an array of characters:</li>
     </ul>
-
+    <h4>Objects that have indexed properties and length are called array-like. Such objects may also have other properties and methods, but lack the built-in methods of arrays.</h4>
+    <p>Source: <a href="https://javascript.info/iterable">https://javascript.info/iterable</a></p>
 </div>

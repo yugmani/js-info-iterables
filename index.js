@@ -124,6 +124,16 @@ console.log(arr2);
 // -------------------------------------------
 
 let string2 = 'x🎉97🧁y🚀';
+console.log(string2[0]);  //x
+console.log(string2.length);  //10  ??
+
+//let us split string2 into array of characters 
+let charArray = Array.from(string2);
+console.log(charArray); //["x", "🎉", "9", "7", "🧁", "y", "🚀"]
+console.log(charArray[1]);  //🎉
+console.log(charArray.length);  //7 
+
+// Array.from internally does the same loop
 let chars = [];
 for (let char of string2) {
   chars.push(char);
