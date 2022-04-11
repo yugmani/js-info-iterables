@@ -70,3 +70,26 @@ do {
   if (result.done) break;
   console.log(result.value); //outputs characters one by one;
 } while (true);
+
+//H e l l object
+//That is rarely needed, but gives us more control over the process than for..of. For instance, we can split the iteration process: iterate a bit, then stop, do something else, and then resume later.
+
+// Iterables and array-likes
+// ----------------------------------
+
+// Iterables are objects that implement the Symbol.iterator method, as described above.
+// Array-likes are objects that have indexes and length, so they look like arrays.
+
+// the object that is array-like, but not iterable:
+let arrayLike = {
+  0: 'Hello',
+  1: 'World',
+  length: 2,
+};
+
+// for (let item of arrayLike){
+// console.log(item);
+//Error: arrayLike is not iterable
+// }
+
+// Both iterables and array-likes are usually not arrays, they don’t have push, pop etc. 
