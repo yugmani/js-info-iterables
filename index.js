@@ -92,4 +92,49 @@ let arrayLike = {
 //Error: arrayLike is not iterable
 // }
 
-// Both iterables and array-likes are usually not arrays, they don’t have push, pop etc. 
+// Both iterables and array-likes are usually not arrays, they don’t have push, pop etc.
+
+//Array.from
+// ************************************
+
+//There’s a universal method Array.from that takes an iterable or array-like value and makes a “real” Array from it. Then we can call array methods on it.
+
+let newArr = Array.from(arrayLike); //takes the object, examines it for being an iterable or array-like, then makes a new array and copies all items to it.
+
+console.log(newArr); //["Hello", "World"]
+console.log(newArr.pop()); //world
+
+//The same happens for an iterable:
+let arr1 = Array.from(range);
+console.log(arr1); //[1, 2, 3, 4, 5]
+
+//The full syntax for Array.from also allows us to provide an optional “mapping” function:
+
+//Array.from(obj[, mapFn, thisArg])
+// --------------------------------------
+
+// The optional second argument mapFn can be a function that will be applied to each element before adding it to the array, and thisArg allows us to set this for it.
+
+let arr2 = Array.from(range, (num) => num * 2);
+
+console.log(arr2);
+[2, 4, 6, 8, 10];
+
+// Here we use Array.from to turn a string into an array of characters:
+// -------------------------------------------
+
+let string2 = 'x🎉97🧁y🚀';
+let chars = [];
+for (let char of string2) {
+  chars.push(char);
+}
+
+console.log(chars); //["x", "🎉", "9", "7", "🧁", "y", "🚀"]
+
+// We can even build surrogate-aware slice on it:
+function sliceString(str, start, end) {
+  return Array.from(str).slice(start, end).join('');
+}
+
+let string3 = 'm🎉9K🧁y🚀';
+console.log(sliceString(string3, 1, 3)); //🎉9
