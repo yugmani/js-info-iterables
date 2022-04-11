@@ -2,6 +2,8 @@
 import './style.css';
 
 // Symbol.iterator
+// ************************************
+
 // For instance, we have an object that is not an array, but looks suitable for for..of.
 
 // Like a range object that represents an interval of numbers:
@@ -33,5 +35,23 @@ range[Symbol.iterator] = function () {
 
 //iterating over range
 for (let num of range) {
-  console.log(num);
+  console.log(num); // 1,2,3,4,5
 }
+
+//String is iterable
+// *********************************************
+
+// Arrays and strings are most widely used built-in iterables.
+
+// For a string, for..of loops over its characters:
+for (let char of 'javascript') {
+  console.log(char); //j,a,v,a,s,c,r,i,p,t
+}
+
+let string1 = 'a3😀2b7💖c';
+let newString = '';
+for (let char of string1) {
+  newString += char + ' ';
+}
+
+console.log(newString); //a 3 😀 2 b 7 💖 c
