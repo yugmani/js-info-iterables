@@ -55,3 +55,18 @@ for (let char of string1) {
 }
 
 console.log(newString); //a 3 😀 2 b 7 💖 c
+
+//Calling an iterator explicitly
+// -------------------------------------------
+
+//iterating over a string in exactly the same way as for..of, but with direct calls. This code creates a string iterator and gets values from it “manually”:
+
+let str = 'Hello';
+
+let iterator = str[Symbol.iterator]();
+
+do {
+  let result = iterator.next();
+  if (result.done) break;
+  console.log(result.value); //outputs characters one by one;
+} while (true);
